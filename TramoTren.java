@@ -34,20 +34,22 @@ public class TramoTren extends TramoTrayecto {
    * 
    * @return double, tiempo en recorrer el trayecto
    */
+  @Override
   public double tiempo() {
     t = this.numParadas;
     
     switch (this.linea) {
       case C1:
-        t *= 5;
+        t *= this.tiempoEspera;
         break;
       case C4:
-        t *= 10;
+        t *= this.tiempoEspera;
         break;
       case C5:
-        t *= 30;
+        t *= this.tiempoEspera;
         break;
       default:
+        t = 0.0;
     }
     
     return t;
