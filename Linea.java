@@ -10,20 +10,23 @@ package trayectos;
  * Nombre del fichero: Linea.java
  */
 public enum Linea{
-  C1("azul claro"),
-  C4("azul oscuro"),
-  C5("amarilla");
+  C1("azul claro", 5),
+  C4("azul oscuro", 10),
+  C5("amarilla", 30);
 
   private String color;
+  private int tiempoEspera;
 
   /**
    * Crea una nueva línea
    * 
    * @param color color de la linea
+   * @param tiempoEspera tiempo de espera entre paradas
    * @return nueva linea creada
    */
-  private Linea(String color) {
+  private Linea(String color, int tiempoEspera) {
     this.color = color;
+    this.tiempoEspera = tiempoEspera;
   }
 
   /**
@@ -35,4 +38,5 @@ public enum Linea{
   private String toString() {
     return this.name() + " (" + this.color + ") ";
   }
+
 }
