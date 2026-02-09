@@ -15,7 +15,7 @@ public enum Linea{
   C5("amarilla", 30);
 
   private String color;
-  private int tiempoEspera;
+  private double tiempoEspera;
 
   /**
    * Crea una nueva línea
@@ -30,6 +30,15 @@ public enum Linea{
   }
 
   /**
+   * Devuelve el tiempo de espera de la linea
+   * 
+   * @return tiempo de espera entre paradas
+   */
+  public double getTiempoEspera() {
+    return this.tiempoEspera;
+  }
+
+  /**
    * Devuelve la información de la linea como cadena de texto
    * 
    * @return String con información de la linea
@@ -38,5 +47,4 @@ public enum Linea{
   private String toString() {
     return this.name() + " (" + this.color + ") ";
   }
-
 }
