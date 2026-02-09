@@ -5,11 +5,12 @@ package trayectos;
 
 /**
  * Esta clase representa un tramo de trayecto
- * @author Claudia Saiz Escribano y Duna Puente Romera. claudia.saiz@estudiante.uam.es y duna.puente@estudiante.uam.es
+ * @author Claudia Saiz Escribano y Duna Puente Romera. 
  * @version 1.0
  * Nombre del fichero: TramoTrayecto.java
  * 
- */ abstract class TramoTrayecto {
+ */ 
+public abstract class TramoTrayecto {
 	private String origen;
 	private String destino;
 	
