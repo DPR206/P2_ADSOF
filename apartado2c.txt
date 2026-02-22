@@ -1,0 +1,6 @@
+public double calcularCoste() {
+  double coste;
+
+  coste = (solicitud.getTokens() + respuesta.getTokens()) * tarea.getCostePerTokens();
+  return coste;
+}

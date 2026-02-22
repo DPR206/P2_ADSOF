@@ -1,0 +1,78 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>110</x><y>426</y><w>150</w><h>40</h></coordinates><panel_attributes>Tarea de generación 
+de código
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>346</y><w>200</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>180;10;180;50;10;50;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>426</y><w>160</w><h>40</h></coordinates><panel_attributes>Tarea de optimización
+ de código
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>426</y><w>160</w><h>30</h></coordinates><panel_attributes>Tarea de consulta
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>346</y><w>60</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>40;10;40;60;10;60;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>346</y><w>130</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60;110;60;110;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>226</y><w>220</w><h>130</h></coordinates><panel_attributes>/Tarea/
+--
+- nombre: String
+- prompt: String
+- numSolicitudes: int
+- numVecesAplicada: int
+--
++ ejecutar(): String
++ getCostePerTokens(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>6</y><w>300</w><h>90</h></coordinates><panel_attributes>Asistente
+--
++ ejecutarSolicitud(programador: Programador,  
+solicitud: String): void
++ obtenerTareasSolicitadas(): List&lt;Tarea&gt;
++ obtenerTareasAplicadas(): List&lt;Tarea&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>36</y><w>220</w><h>90</h></coordinates><panel_attributes>Programador
+--
+- nombre: String
+- usuarioGithub: String
+--
++ solicitarAsistencia(String): void
++ calcularCosteAcumulado(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>176</y><w>220</w><h>100</h></coordinates><panel_attributes>LLM
+--
+- API key: String
+- nombre: String
+- temperatura: double
+- costePorToken: double
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>426</y><w>150</w><h>50</h></coordinates><panel_attributes>Tarea Compuesta
+--
++ agregarTarea(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>346</y><w>250</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;230;40;230;80</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>286</y><w>240</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+r2=tareas
+m1=1
+m2= 1..*</panel_attributes><additional_attributes>210;140;210;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>56</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+r1=programadores
+m1=0..*
+</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>526</y><w>230</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoContexto
+--
++ CODIGO DEL METODO ACTUAL
++ CLASE ACTUAL
++ TODO EL PROYECTO
+--
++ getInformacion(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>456</y><w>150</w><h>90</h></coordinates><panel_attributes>lt=-&gt;
+r1=informacionAdicional
+m1=0..3</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>456</y><w>150</w><h>90</h></coordinates><panel_attributes>lt=-&gt;
+r1=informacionAdicional
+m1=0..3</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>36</y><w>230</w><h>160</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+m1= 0..*
+r1=llms
+</panel_attributes><additional_attributes>190;140;190;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>86</y><w>70</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+r2= tareas
+m2=0..*
+</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>76</y><w>190</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+r1=llmPorDefecto</panel_attributes><additional_attributes>90;100;90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>246</y><w>110</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+r1=lenguaje
+</panel_attributes><additional_attributes>90;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>216</y><w>200</w><h>170</h></coordinates><panel_attributes>TareaEjecutada
+--
+- solicitud: String
+- timestampSolicitud: LocalDate
+- respuesta: String
+- timestampRespuesta: LocalDate
+- aplicada: boolean
+- coste: double
+--
++ calcularCoste(): double
++ aplicar(): void
+- getTokens(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>86</y><w>270</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+r2=registro
+m2=0..*</panel_attributes><additional_attributes>250;10;250;70;10;70;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>10</x><y>116</y><w>120</w><h>120</h></coordinates><panel_attributes>lt=&lt;-&gt;
+r1=programador
+m2=0..*
+r2=tareasEjecutadas
+</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>286</y><w>170</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+r1=tarea</panel_attributes><additional_attributes>150;20;10;20</additional_attributes></element></diagram>
